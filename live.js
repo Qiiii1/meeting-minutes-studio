@@ -285,7 +285,7 @@ window.LiveMeeting = (() => {
       const mimeType = ['audio/webm;codecs=opus', 'audio/mp4', 'audio/webm'].find(t => MediaRecorder.isTypeSupported(t));
       s.recorder = new MediaRecorder(s.stream, { ...(mimeType ? { mimeType } : {}), audioBitsPerSecond: 64000 });
       const extension = s.recorder.mimeType.includes('mp4') ? 'm4a' : 'webm';
-      s.meeting = { id: uid(), title: `${today()} 的会议`, date: today(), type: s.online ? '线上会议' : '现场会议', status: 'draft', demo: false, live: true, asrProvider: s.provider, recording: true, attendees: '待确认', duration: '录音中', summary: '待整理：录音和识别原文已保存，星火自动纪要尚未接入。', points: '', decisions: '', pending: '请回听核对识别文字，并确认负责人及日期。', next: '', actions: [], segments: [], raw: '', audioMime: s.recorder.mimeType, audioName: `meeting-${today()}.${extension}`, audioStored: false };
+      s.meeting = { id: uid(), title: `${today()} 的会议`, date: today(), type: s.online ? '线上会议' : '现场会议', status: 'draft', demo: false, live: true, asrProvider: s.provider, recording: true, attendees: '待确认', duration: '录音中', summary: '待整理：录音和识别原文已保存，可使用 DeepSeek 自动整理。', points: '', decisions: '', pending: '请回听核对识别文字，并确认负责人及日期。', next: '', actions: [], segments: [], raw: '', audioMime: s.recorder.mimeType, audioName: `meeting-${today()}.${extension}`, audioStored: false };
       meetings.unshift(s.meeting);
       persist();
       s.recorder.ondataavailable = event => {

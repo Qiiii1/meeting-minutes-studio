@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "meeting-notes": {
+      "source": "claude-office-skills/skills",
+      "sourceType": "github",
+      "skillPath": "meeting-notes/SKILL.md",
+      "computedHash": "537f386c7ad22ade1c3862c759473d4e465ebc081dfce026d71c6a617f0d082a"
+    }
+  }
+}

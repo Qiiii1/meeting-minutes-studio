@@ -65,7 +65,7 @@ const crypto = require('node:crypto');
   await page.locator('.hero .start-meeting:not([data-mode])').click();
   await page.locator('#asr-dialog').waitFor();
   await page.locator('[name=appId]').fill('example-app');
-  await page.locator('[name=apiKey]').fill('test-only-key');
+  await page.locator('#asr-form [name=apiKey]').fill('test-only-key');
   await page.locator('#asr-form [type=submit]').click();
   await page.locator('#asr-dialog').waitFor({ state: 'hidden' });
   await page.locator('.hero .start-meeting:not([data-mode])').click();
